@@ -23,7 +23,7 @@ export class FileHelper {
 
         let componentContent = fs.readFileSync( templateFileName ).toString()
             .replace(/{selector}/g, componentName)
-            .replace(/{templateUrl}/g, `${componentName}.component.html`)
+            .replace(/{templateUrl}/g, `${componentName}.component.${config.html.extension}`)
             .replace(/{styleUrls}/g, `${componentName}.component.${config.css.extension}`)
             .replace(/{className}/g, changeCase.pascalCase(componentName))
             .replace(/{quotes}/g, this.getQuotes(globalConfig));
